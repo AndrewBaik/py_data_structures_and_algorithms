@@ -81,3 +81,30 @@ def test_includes_returns_false_if_nonexists(small_list):
     assert small_list.includes(100) is False
     assert small_list.includes(0) is False
 
+
+def test_append_new_node_at_the_end(small_list):
+    """ test of append method to validate if node is being added at the
+        end
+    """
+    small_list.append(5)
+    length = 5
+    assert small_list.includes(5)
+    assert len(small_list) == length
+
+
+def test_insert_new_node_before(small_list):
+    """ test of inserting a new node before a certain node in the linked list
+    """
+    small_list.insertBefore(2, 5)
+    length = 5
+    assert small_list.includes(5)
+    assert len(small_list) == length
+
+
+def test_insert_new_node_after(small_list):
+    """ test of inserting a new node after a certain node in the linked list
+    """
+    small_list.insertAfter(3, 5)
+    length = 5
+    assert small_list.includes(5)
+    assert len(small_list) == length
