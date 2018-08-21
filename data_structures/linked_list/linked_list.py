@@ -1,4 +1,4 @@
-from node import Node
+from .node import Node
 
 
 class LinkedList(object):
@@ -51,6 +51,10 @@ class LinkedList(object):
     def insertBefore(self, val, newVal):
         """ method that adds a new node before a given value of a node
         """
+        if self.head.val is val:
+            self.head = Node(newVal, self.head)
+            self._length += 1
+            return
         current = self.head
         while current._next.val is not val:
             current = current._next
@@ -66,17 +70,40 @@ class LinkedList(object):
         current._next = Node(newVal, current._next)
         self._length += 1
 
+    def kth_from_the_end(self, kth):
+        """ find the kth value from the end of linked list
+        """
+        counter = 0
+        current = self.head
+        while current._next is not None:
+            current = current._next
+            counter += 1
+        front_index = counter - kth
+        current = self.head
+        while front_index is not 0:
+            current = current._next
+            front_index -= 1
+        return current.val
+
 
 if __name__ == '__main__':
     ll = LinkedList()
-    ll.insert(2)
+    ll.insert(5)
+    ll.insert(4)
     ll.insert(3)
-    ll.insert(6)
-    ll.insert(7)
-    ll.append(1)
-    ll.insertBefore(3, 4)
-    ll.insertAfter(6, 5)
+    ll.insert(2)
+    ll.insert(1)
+    ll.append(6)
+    ll.insertAfter(6, 7)
+    ll.insertAfter(4, 5)
+    ll.insertBefore(1, 0)
+    ll.insertBefore(3, 2)
     ll.current = ll.head
     while ll.current is not None:
         print(str(ll.current.val))
         ll.current = ll.current._next
+    print('insertion here')
+    print(ll.kth_from_the_end(0))
+    print(ll.kth_from_the_end(1))
+    print(ll.kth_from_the_end(2))
+
