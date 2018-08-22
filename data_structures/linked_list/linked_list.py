@@ -1,4 +1,4 @@
-from node import Node
+from .node import Node
 
 
 class LinkedList(object):
@@ -18,7 +18,7 @@ class LinkedList(object):
         return f'{self.head} | Length: {self._length}'
 
     def __repr__(self):
-        return f'< Linked List | Head {self.head} | Length: {self.length} >'
+        return f'< Linked List | Head {self.head} | Length: {self._length} >'
 
     def __len__(self):
         return self._length
@@ -51,32 +51,55 @@ class LinkedList(object):
     def insertBefore(self, val, newVal):
         """ method that adds a new node before a given value of a node
         """
+        if self.head.val is val:
+            self.head = Node(newVal, self.head)
+            self._length += 1
+            return
         current = self.head
-        while current._next.val is not val:
-            current = current._next
-        current._next = Node(newVal, current._next)
-        self._length += 1
+        while current._next is not None:
+            if current._next.val is val:
+                current._next = Node(newVal, current._next)
+                self._length += 1
+                return
+            else:
+                current = current._next
 
     def insertAfter(self, val, newVal):
         """ method that adds a new node after a given value of a node
         """
         current = self.head
-        while current.val is not val:
+        while current._next is not None:
+            if current.val is val:
+                current._next = Node(newVal, current._next)
+                self._length += 1
+                return
+            else:
+                current = current._next
+        if current.val is val:
+            current._next = Node(newVal)
+            self._length += 1
+
+    def kth_from_the_end(self, kth):
+        """ find the kth value from the end of linked list
+        """
+        counter = 0
+        current = self.head
+        while current._next is not None:
             current = current._next
-        current._next = Node(newVal, current._next)
-        self._length += 1
+            counter += 1
+        front_index = counter - kth
+        current = self.head
+        while front_index is not 0:
+            current = current._next
+            front_index -= 1
+        return current.val
 
 
 if __name__ == '__main__':
-    ll = LinkedList()
-    ll.insert(2)
-    ll.insert(3)
-    ll.insert(6)
-    ll.insert(7)
-    ll.append(1)
-    ll.insertBefore(3, 4)
-    ll.insertAfter(6, 5)
-    ll.current = ll.head
-    while ll.current is not None:
-        print(str(ll.current.val))
-        ll.current = ll.current._next
+    ll = LinkedList([1, 2, 3, 4])
+    ll.insertAfter(13, 5)
+
+    current = ll.head
+    while current is not None:
+        print(str(current.val))
+        current = current._next
