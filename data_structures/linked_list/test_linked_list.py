@@ -92,6 +92,15 @@ def test_append_new_node_at_the_end(small_list):
     assert len(small_list) == length
 
 
+def test_append_new_node_at_the_end(small_list):
+    """ test of append method to validate if node is being added at the
+        end
+    """
+    small_list.append(5)
+    assert small_list.includes(5) == True
+    assert len(small_list) == 5
+
+
 def test_insert_new_node_before(small_list):
     """ test of inserting a new node before a certain node in the linked list
     """
@@ -101,23 +110,42 @@ def test_insert_new_node_before(small_list):
     assert len(small_list) == length
 
 
+def test_insert_new_node_before_nonexisting_value(small_list):
+    """ test of inserting before a node that don't exist. It will not add any new node
+    """
+    small_list.insertBefore(13, 5)
+    assert len(small_list) == 4
+
+
+def test_insert_new_node_after_first_node(small_list):
+    """ test of inserting a new node before first existing node in the linked list, testing for edge case
+    """
+    small_list.insertAfter(1, 5)
+    assert len(small_list) == 5
+
+
 def test_insert_new_node_after(small_list):
     """ test of inserting a new node after a certain node in the linked list
     """
     small_list.insertAfter(3, 5)
-    length = 5
     assert small_list.includes(5)
-    assert len(small_list) == length
 
 
-def test_insert_new_node_after_with_invalid_input(small_list):
-    """ test of inserting a new node after a certain node in the linked list
+def test_insert_new_node_after_nonexisting_value(small_list):
+    """ test of inserting to a value that don't exist. It will not add any new node
     """
-    #with pytest.raises(AssertionError):
-    assert small_list.insertAfter(13, 5)
+    small_list.insertAfter(13, 5)
+    assert len(small_list) == 4
 
 
-def test_insertion_kth_from_end_when_value_exist_in_ll(small_list):
+def test_insert_new_node_after_last_node(small_list):
+    """ test of inserting a new node after the last existing node in the linked list, testing for edge case
+    """
+    small_list.insertAfter(4, 5)
+    assert len(small_list) == 5
+
+
+def test_kth_from_end_when_value_exist_in_ll(small_list):
     """ test for returning the appropriate value when insertion is called
     """
     assert small_list.kth_from_the_end(0) == 1
@@ -126,7 +154,7 @@ def test_insertion_kth_from_end_when_value_exist_in_ll(small_list):
     assert small_list.kth_from_the_end(3) == 4
 
 
-def test_insertion_kth_from_end_when_value_not_exist_in_ll(small_list):
+def test_kth_from_end_when_value_not_exist_in_ll(small_list):
     """ test for returning the exception/error when input is greater than the length of the linked list
     """
     with pytest.raises(AttributeError):
