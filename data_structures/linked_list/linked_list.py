@@ -12,10 +12,10 @@ class LinkedList(object):
 
         if val_list is not None:
             for val in val_list:
-                self.insert(val)
+                self.append(val)
 
     def __str__(self):
-        return f'{self.head} | Length: {self._length}'
+        return f'{self.head} | Length: {self._length} '
 
     def __repr__(self):
         return f'< Linked List | Head {self.head} | Length: {self._length} >'
@@ -42,10 +42,13 @@ class LinkedList(object):
     def append(self, value):
         """ method that adds a new node at the end of the linked list
         """
-        current = self.head
-        while current._next is not None:
-            current = current._next
-        current._next = Node(value)
+        if self.head is None:
+            self.head = Node(value)
+        else:
+            current = self.head
+            while current._next is not None:
+                current = current._next
+            current._next = Node(value)
         self._length += 1
 
     def insertBefore(self, val, newVal):
@@ -93,13 +96,3 @@ class LinkedList(object):
             current = current._next
             front_index -= 1
         return current.val
-
-
-if __name__ == '__main__':
-    ll = LinkedList([1, 2, 3, 4])
-    ll.insertAfter(13, 5)
-
-    current = ll.head
-    while current is not None:
-        print(str(current.val))
-        current = current._next
