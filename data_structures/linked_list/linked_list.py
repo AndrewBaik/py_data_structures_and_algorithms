@@ -2,7 +2,7 @@ from .node import Node
 
 
 class LinkedList(object):
-    """ Abstract clss for linked list
+    """ clss for linked list
     """
     def __init__(self, val_list=None):
         """ Constructor for LinkedList
