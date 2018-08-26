@@ -6,9 +6,12 @@
 ## Table of Content
 
 ### Data Structures
-[Linked List](data_structures/linked_list/README.md)
-    - Creating base abstraction class for Linked List and Node.
-
+1. [Linked List](data_structures/linked_list/README.md)
+    - Creating base class for Linked List and Node.
+2. [Stack](data_structures/stack/README.md)
+    - Creating a base class for Stack
+3. [Queue](data_structures/queue/README.md)
+    - Creating a base class for Queue
 
 </br>
 
