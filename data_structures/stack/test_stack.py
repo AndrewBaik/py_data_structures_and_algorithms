@@ -58,7 +58,7 @@ def test_for_stack_attributes_when_pushed(empty_stack):
     """ testing for checking the value of top when pushed
     """
     empty_stack.push(5)
-    assert empty_stack.top.value is 5
+    assert empty_stack.top.val is 5
 
 
 def test_for_stack_pop(small_stack):
@@ -72,16 +72,16 @@ def test_for_stack_pop(small_stack):
 def test_for_top_value_when_pop(small_stack):
     """ test for change in .top reference when pop()
     """
-    assert small_stack.top.value is 1
+    assert small_stack.top.val is 1
     small_stack.pop()
-    assert small_stack.top.value is 2
+    assert small_stack.top.val is 2
 
 
 def test_for_peek(small_stack):
     """ test for peeking the top of a stack
     """
     top = small_stack.peek()
-    assert top.value is 1
+    assert top.val is 1
 
 
 def test_for_peek_empty_stack(empty_stack):
@@ -89,4 +89,4 @@ def test_for_peek_empty_stack(empty_stack):
     """
     with pytest.raises(AttributeError):
         top = empty_stack.peek()
-        top.value
+        top.val

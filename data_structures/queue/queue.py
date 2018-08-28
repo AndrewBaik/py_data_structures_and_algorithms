@@ -12,8 +12,8 @@ class Queue:
         self._length = 0
 
         if val_list is not None:
-            for value in val_list:
-                self.enqueue(value)
+            for val in val_list:
+                self.enqueue(val)
 
     def __len__(self):
         """ returns the length of the queue
@@ -30,23 +30,26 @@ class Queue:
         """
         return f'{self.front} | {self.rear} | Length: {self._length} '
 
-    def enqueue(self, value):
+    def enqueue(self, val):
         """ Adds a new node into the queue
         """
-        self.front = Node(value, self.front)
-        if self.rear is None:
-            self.rear = self.front
+        self.rear = Node(val, self.front)
+        if self.front is None:
+            self.front = self.rear
         self._length += 1
 
     def dequeue(self):
         """ Removes the last node in the queue
         """
         if self.front is not self.rear:
-            current = self.front
-            while current._next is not self.rear:
+            current = self.rear
+            while current._next is not self.front:
                 current = current._next
+            temp = current._next
             current._next = None
-            self.rear = current
+            self.front = current
         else:
-            self.front, self.rear = None
+            temp = self.front
+            self.rear, self.front = None
         self._length -= 1
+        return temp

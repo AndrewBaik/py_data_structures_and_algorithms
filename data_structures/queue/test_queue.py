@@ -59,8 +59,8 @@ def test_for_queue_attributes_when_enqueue(empty_queue):
     """ testing for checking the value of front and rear when enqueue
     """
     empty_queue.enqueue(5)
-    assert empty_queue.front.value is 5
-    assert empty_queue.rear.value is 5
+    assert empty_queue.front.val is 5
+    assert empty_queue.rear.val is 5
 
 
 def test_for_queue_dequeue(small_queue):
@@ -74,6 +74,6 @@ def test_for_queue_dequeue(small_queue):
 def test_for_top_value_when_pop(small_queue):
     """ test for change in .rear reference when dequeue()
     """
-    assert small_queue.rear.value is 4
+    assert small_queue.front.val is 4
     small_queue.dequeue()
-    assert small_queue.rear.value is 3
+    assert small_queue.front.val is 1
