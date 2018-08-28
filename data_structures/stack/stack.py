@@ -11,8 +11,8 @@ class Stack:
         self._length = 0
 
         if val_list is not None:
-            for value in val_list:
-                self.push(value)
+            for val in val_list:
+                self.push(val)
 
     def __repr__(self):
         """ Display detail info about the stack
@@ -29,14 +29,14 @@ class Stack:
         """
         return self._length
 
-    def push(self, value):
+    def push(self, val):
         """ Method which accepts a value of any type and creates a new Node in the Stack instance.
             Args:
                 value (object): Any
             Return:
                 Node
         """
-        self.top = Node(value, self.top)
+        self.top = Node(val, self.top)
         self._length += 1
         return self.top
 
@@ -47,7 +47,7 @@ class Stack:
         self.top = temp._next
         temp._next = None
         self._length -= 1
-        return temp.value
+        return temp.val
 
     def peek(self):
         """ Method that peeks at the top node in the stack
