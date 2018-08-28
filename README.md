@@ -32,3 +32,5 @@
 #### Queue and Stack
 [Queue with Stacks](challenges/queue_with_stacks/README.md) - Implement Queues' enqueue and dequeue methods using two Stacks.
 </br>
+
+[Fifo Animal Shelter](challenges/fifo_animal_shelter/README.md) - Implement enqueue and dequeue methods with animal objects.
