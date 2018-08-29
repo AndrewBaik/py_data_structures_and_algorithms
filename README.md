@@ -34,3 +34,6 @@
 </br>
 
 [Fifo Animal Shelter](challenges/fifo_animal_shelter/README.md) - Implement enqueue and dequeue methods with animal objects.
+</br>
+
+[Multi Bracket Vadliation](challenges/multi_bracket_validation/README.md) - Implement a function that validates the balance of brackets.
