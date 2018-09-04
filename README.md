@@ -12,6 +12,8 @@
     - Creating a base class for Stack
 3. [Queue](data_structures/queue/README.md)
     - Creating a base class for Queue
+4. [Binary Tree](data_structures/binary_search_tree/README.md)
+    - Basic class binary tree class with depth first approaches
 
 </br>
 
