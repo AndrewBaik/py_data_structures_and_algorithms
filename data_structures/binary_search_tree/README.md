@@ -1,7 +1,7 @@
 # Binary Tree
 
 ## Summary
-- Define the binary class 
+- Define the binary class
 
 
 ### Node
@@ -11,3 +11,8 @@
 - `__repr__` and `__str__` methods defined to return appropriate representations of the tree
 - `insert` method defined to take a value and add it into the existing binary tree based on the value of the argument.
 - `pre_order`, `in_order`, and `post_order` methods utilizes the depth-first approach to traversal through a binary tree.
+- `breadth_first` method traverses the binary tree by each width of the tree using a list.
+
+
+### Breadth First
+![Breadth first whiteboard](../../assets/breadth_first.jpg)
