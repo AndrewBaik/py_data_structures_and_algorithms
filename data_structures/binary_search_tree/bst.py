@@ -104,3 +104,23 @@ class BinaryTree(object):
             callable(node)
 
         _walk(self.root)
+
+    def breadth_first(self, callable=lambda front: print(front)):
+        """ Breadth first approach traversing through a bt
+        """
+        if self.root is None:
+            raise ValueError
+
+        queue = []
+        queue.append(self.root)
+
+        try:
+            while queue[0] is not None:
+                front = queue.pop(0)
+                callable(front)
+                if front.left is not None:
+                    queue.append(front.left)
+                if front.right is not None:
+                    queue.append(front.right)
+        except IndexError:
+            return

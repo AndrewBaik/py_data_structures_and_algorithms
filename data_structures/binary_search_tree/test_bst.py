@@ -67,3 +67,77 @@ def test_inserting_value_already_exist(empty_bt):
     assert empty_bt.root.left is None
     assert empty_bt.root.right is None
 
+
+def test_preorder_traversal(balanced_bt):
+    """ testing for pre_order traversal order
+    """
+    expected = [5, 3, 2, 4, 8, 7, 9]
+    actual = []
+
+    def generate_list(node):
+        actual.append(node.val)
+
+    balanced_bt.pre_order(generate_list)
+    assert expected == actual
+
+
+def test_inorder_traversal(balanced_bt):
+    """ testing for in_order traversal order
+    """
+    expected = [2, 3, 4, 5, 7, 8, 9]
+    actual = []
+
+    def generate_list(node):
+        actual.append(node.val)
+
+    balanced_bt.in_order(generate_list)
+    assert expected == actual
+
+
+def test_postorder_traversal(balanced_bt):
+    """ testing for post_order traversal order
+    """
+    expected = [2, 4, 3, 7, 9, 8, 5]
+    actual = []
+
+    def generate_list(node):
+        actual.append(node.val)
+
+    balanced_bt.post_order(generate_list)
+    assert expected == actual
+
+
+def test_breadth_first_with_unbalanced_bt(balanced_bt):
+    """ testing for breadth frist traversal with an unbalanced bt
+    """
+    balanced_bt.insert(1)
+    balanced_bt.insert(10)
+    expected = [5, 3, 8, 2, 4, 7, 9, 1, 10]
+    actual = []
+
+    def generate_list(node):
+        actual.append(node.val)
+
+    balanced_bt.breadth_first(generate_list)
+    assert expected == actual
+
+
+def test_breadth_first_using_bigger_bt(balanced_bt):
+    """ testing for breadth first traversal approach with balanced bt
+    """
+    expected = [5, 3, 8, 2, 4, 7, 9]
+    actual = []
+
+    def generate_list(node):
+        actual.append(node.val)
+
+    balanced_bt.breadth_first(generate_list)
+    assert expected == actual
+
+
+def test_breadth_first_empty_bt(empty_bt):
+    """ testing breadth first with empty bt
+    """
+    with pytest.raises(ValueError):
+        empty_bt.breadth_first()
+
