@@ -124,3 +124,4 @@ class BinaryTree(object):
                     queue.append(front.right)
         except IndexError:
             return
+
