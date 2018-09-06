@@ -39,3 +39,8 @@
 </br>
 
 [Multi Bracket Vadliation](challenges/multi_bracket_validation/README.md) - Implement a function that validates the balance of brackets.
+
+</br>
+
+#### Binary Tree
+[Find Maximum Value](challenges/maximum_value/README.md) - Implement a function that validates and returns the highes value within the binary tree.
