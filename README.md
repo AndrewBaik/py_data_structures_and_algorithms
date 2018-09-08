@@ -14,6 +14,8 @@
     - Creating a base class for Queue
 4. [Binary Tree](data_structures/binary_search_tree/README.md)
     - Basic class binary tree class with depth first approaches
+5. [Graphs](data_structures/graph/README.md)
+    - Implement ad base graph class holds list of verticies.
 
 </br>
 
@@ -44,3 +46,4 @@
 
 #### Binary Tree
 [Find Maximum Value](challenges/maximum_value/README.md) - Implement a function that validates and returns the highes value within the binary tree.
+
