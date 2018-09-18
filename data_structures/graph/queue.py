@@ -1,4 +1,13 @@
-from .node import Node
+class Node:
+    def __init__(self, val, _next=None):
+        self.val = val
+        self._next = _next
+
+    def __str__(self):
+        return f'{self.val}'
+
+    def __repr__(self):
+        return f'<Node | val: {self.val} | Next: {self._next}>'
 
 
 class Queue:
@@ -58,4 +67,4 @@ class Queue:
             except AttributeError:
                 self.front = None
             self._length -= 1
-        return temp
+        return temp.val

@@ -17,6 +17,18 @@ def small_graph():
     return graph
 
 
+@pytest.fixture
+def connected_graph():
+    graph = Graph()
+    graph.graph = {
+        'A': {'B': 1, 'D': 5},
+        'B': {'A': 1, 'C': 3},
+        'C': {'B': 3, 'D': 8},
+        'D': {'A': 5, 'C': 8},
+    }
+    return graph
+
+
 @pytest.fixture()
 def filled_graph():
     graph = Graph()
@@ -114,3 +126,27 @@ def test_all_empty_neighbors(filled_graph):
     """
     with pytest.raises(KeyError):
         filled_graph.get_neighbors('E')
+
+
+def test_breadthfirst(connected_graph):
+    """
+    """
+    expect = ['A', 'B', 'D', 'C']
+    actual = connected_graph.breadth_first('A')
+    assert actual == expect
+
+
+def test_empty_root_breadth_first(connected_graph):
+    """ test for bradthfirst putting empty root
+    """
+    expect = []
+    actual = connected_graph.breadth_first()
+    assert actual == expect
+
+
+def test_disconnected_graph_breadthfirst(filled_graph):
+    """ test for breadth first of a disconnected node
+    """
+    expect = ['E']
+    actual = filled_graph.breadth_first('E')
+    assert actual == expect

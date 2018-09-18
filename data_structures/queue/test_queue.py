@@ -76,4 +76,4 @@ def test_for_top_value_when_pop(small_queue):
     """
     assert small_queue.front.val is 4
     small_queue.dequeue()
-    assert small_queue.front.val is 1
+    assert small_queue.front.val is 3

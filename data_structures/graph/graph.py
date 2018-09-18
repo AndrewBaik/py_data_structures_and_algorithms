@@ -1,3 +1,6 @@
+from .queue import Queue
+
+
 class Graph(object):
     def __init__(self):
         self.graph = {}
@@ -32,7 +35,6 @@ class Graph(object):
     def add_edge(self, value1, value2, weight):
         """ adds a new edge between two vertices
         """
-        # import pdb; pdb.set_trace()
         try:
             self.graph[value1]
             self.graph[value2]
@@ -56,4 +58,22 @@ class Graph(object):
         else:
             raise KeyError
 
-
+    def breadth_first(self, root=None):
+        """ returns a list of all the nodes in the graph
+        """
+        if root is None:
+            return []
+        container = Queue()
+        output = []
+        container.enqueue(root)
+        visited = {root: True}
+        while container._length is not 0:
+            value = container.dequeue()
+            output.append(value)
+            for node in self.graph[value]:
+                try:
+                    visited[node]
+                except KeyError:
+                    container.enqueue(node)
+                    visited[node] = True
+        return output
