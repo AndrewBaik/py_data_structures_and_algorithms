@@ -47,3 +47,7 @@
 #### Binary Tree
 [Find Maximum Value](challenges/maximum_value/README.md) - Implement a function that validates and returns the highes value within the binary tree.
 
+</br>
+
+#### Graph
+[Get Edge](challenges/get_edge/README.md) - Implement a function that validates the direct connection and return sum of all edges.
