@@ -53,3 +53,8 @@
 [Get Edge](challenges/get_edge/README.md) - Implement a function that validates the direct connection and return sum of all edges.
 
 [Depth First](challenges/depth_first_graph/README.md) - Implement a depth first traversal with adjacency list and return list of visited nodes.
+
+</br>
+
+#### Hashtable
+[Repeated Word](challenges/repeated_words/README.md) - implement a function that takes a lengthy string as an argument and return the first repeated word.
