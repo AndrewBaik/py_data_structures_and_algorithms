@@ -40,7 +40,6 @@ class HashTable:
             self.hashtable.append(ll)
         else:
             for ll in self.hashtable:
-                # import pdb; pdb.set_trace()
                 if ll.head.val == hashed:
                     index = self.hashtable.index(ll)
                     selected_linkedlist = ll
@@ -78,10 +77,10 @@ class HashTable:
         returns: the value stored with the key
         """
         hashed = self._hash_key(key)
-        if self.get(key) == []:
-            raise KeyError
         for ll in self.hashtable:
             if ll.head.val == hashed:
                 index = self.hashtable.index(ll)
-                self.hashtable[index] = None
-                pass
+                del self.hashtable[index]
+                return True
+        return False
+
