@@ -15,7 +15,9 @@
 4. [Binary Tree](data_structures/binary_search_tree/README.md)
     - Basic class binary tree class with depth first approaches
 5. [Graphs](data_structures/graph/README.md)
-    - Implement ad base graph class holds list of verticies.
+    - Implement a base graph class holds list of verticies.
+6. [Hash Table](data_structures/hashtable/README.md)
+    - A class for hashtable implementation.
 
 </br>
 
