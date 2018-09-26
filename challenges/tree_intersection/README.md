@@ -1,4 +1,7 @@
-# Tree Intersections
+# Tree Intersection
 
+## Summary
+- Write a function that takes two binary trees as arguments, return list of values that contains in both of given binary trees.
 
-![](../../assets/tree_intersections.jpg)
+## Whiteboard
+![tree interseaction](../../assets/tree_intersections.jpg)

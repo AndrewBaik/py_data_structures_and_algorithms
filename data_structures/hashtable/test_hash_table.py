@@ -96,5 +96,11 @@ def test_hashtable_remove(small_ht):
     """ test for removing values
     """
     expect = []
-    small_ht.remove('A')
+    assert True is small_ht.remove('A')
     assert expect == small_ht.get('A')
+
+
+def test_hashtable_remove_dont_exist(small_ht):
+    """ test removing key that dont exist in the ht
+    """
+    assert False is small_ht.remove('Z')

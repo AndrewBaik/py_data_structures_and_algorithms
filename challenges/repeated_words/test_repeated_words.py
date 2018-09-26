@@ -33,7 +33,4 @@ def test_return_with_no_repeated():
     """ test when given has no repeated word
     """
     given = 'there are no repeated words'
-    with pytest.raises(AttributeError):
-        repeated_words(given)
-
-
+    assert repeated_words(given) is None

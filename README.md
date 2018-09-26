@@ -60,3 +60,5 @@
 
 #### Hashtable
 [Repeated Word](challenges/repeated_words/README.md) - implement a function that takes a lengthy string as an argument and return the first repeated word.
+
+[Tree Intersection](challenges/tree_intersection/README.md) - implement a function that returns list of values that are held by two given binary trees.

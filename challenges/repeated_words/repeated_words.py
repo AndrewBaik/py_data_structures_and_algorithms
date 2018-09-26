@@ -1,15 +1,14 @@
-# import hashtable
+from py_data_structures_and_algorithms.data_structures.hashtable.hash_table import HashTable
 
 
 def repeated_words(user_input):
     """ taks a string, return repeated word
     """
-    ht = Hashtable()
     words = user_input.split()
+    ht = HashTable()
 
     for word in words:
-        hash = ht.hash(word.lower())
-        if ht.get(hash):
+        if ht.get(word.lower()):
             return word.lower()
         else:
-            ht.set(hash, word.lower())
+            ht.set(word.lower(), word.lower())

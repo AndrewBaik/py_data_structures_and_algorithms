@@ -24,8 +24,7 @@ def tree_intersection(bt1, bt2):
     try:
         while queue[0] is not None:
             front = queue.pop(0)
-
-            if ht.get(front.val) is not None:
+            if ht.get(front.val) != []:
                 output.append(front.val)
 
             if front.left is not None:
