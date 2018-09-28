@@ -64,3 +64,11 @@
 [Tree Intersection](challenges/tree_intersection/README.md) - implement a function that returns list of values that are held by two given binary trees.
 
 [Left Join](challenges/left_join/README.md) - implement a function that takes two hashtables and return list of key/values after joint of two bt.
+
+</br>
+
+### Sorting Algorithms
+Implementation of sorting algorithms using different types of [classifications](https://en.wikipedia.org/wiki/Sorting_algorithm#Classification).
+1. [Selection Sort](sort_algos/selection_sort/README.md)
+
+1. [Insertion Sort](sort_algos/insertion_sort/README.md)
