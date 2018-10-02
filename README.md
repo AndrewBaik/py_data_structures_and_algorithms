@@ -74,3 +74,5 @@ Implementation of sorting algorithms using different types of [classifications](
 1. [Insertion Sort](sort_algos/insertion_sort/README.md)
 
 1. [Merge Sort](sort_algos/merge_sort/README.md)
+
+1. [Quick Sort](sort_algos/quick_sort/README.md)

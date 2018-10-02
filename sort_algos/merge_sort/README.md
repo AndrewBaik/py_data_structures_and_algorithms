@@ -7,5 +7,7 @@
 1. Merge all lists into one as all the values are being sorted
 1. Return the sorted list of values.
 
+Big(O) of n log n
+
 ## Whiteboard
 ![Merge Sort Whiteboard](../../assets/merge_sort.jpg)
